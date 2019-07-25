@@ -1,0 +1,28 @@
+<button class="btn btn-success create" (click)="onRandomMode()" [disabled]="randomMode">Create Multiple Random Contacts</button>
+
+<div class="row">
+  <div class="col-12">
+    <form *ngIf="randomMode" (ngSubmit)="onsubmitRandom(fr)" #fr="ngForm">
+      <div class="col-6 form-group">
+        <label for="amount">Amount (Please input a number <= 9999)</label>
+        <input
+          type="number"
+          id="amount"
+          class="form-control"
+          name="amount"
+          ngModel
+          required
+          pattern="^[1-9][0-9]{0,3}$"
+          #amount
+        >
+      </div>
+      <div class="row">
+        <div class="col-4 offset-8 btn-toolbar">
+          <button type="submit" class="btn btn-primary"
+                  [disabled]="!fr.valid">Create {{amount.value}} Contacts</button>
+          <button type="button" class="btn btn-outline-secondary cancel" (click)="onCancel()">Cancel</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

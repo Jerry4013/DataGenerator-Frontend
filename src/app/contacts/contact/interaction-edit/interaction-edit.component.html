@@ -1,0 +1,72 @@
+<button class="btn btn-success create" (click)="onCreateMode()" [disabled]="createMode">Create One Interaction</button>
+
+<div class="row">
+  <div class="col-12">
+    <form *ngIf="createMode" (ngSubmit)="onSubmit(f)" #f="ngForm">
+      <div class="row">
+        <div class="col-3 form-group">
+          <label for="ia-type">Interaction Type*</label>
+          <select
+            name="iaType"
+            id="ia-type"
+            class="form-control"
+            [(ngModel)]="iaTypeSelected"
+            required
+            (change)="refreshCommMediums()"
+          >
+            <option value=""></option>
+            <option *ngFor="let iaType of iaTypes" [value]="iaType">{{ iaType }}</option>
+          </select>
+        </div>
+        <div class="col-3 form-group">
+          <label for="comm-medium">Communication Medium*</label>
+          <select
+            name="commMedium"
+            id="comm-medium"
+            class="form-control"
+            [(ngModel)]="commSelected"
+            required
+            (change)="refreshIaTypes()"
+          >
+            <option value=""></option>
+            <option *ngFor="let commMedium of commMediums" [value]="commMedium">{{ commMedium }}</option>
+          </select>
+        </div>
+        <div class="col-3 form-group">
+          <label for="iaStage">Interaction Stage*</label>
+          <select
+            name="iaStage"
+            id="iaStage"
+            class="form-control"
+            ngModel
+            required
+          >
+            <option value="1">Marketing</option>
+            <option value="2">Sales</option>
+            <option value="3">Service</option>
+          </select>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-3 form-group">
+          <label for="timestamp">Interaction Time*</label>
+          <input
+            type="date"
+            id="timestamp"
+            class="form-control"
+            name="timestamp"
+            ngModel
+            required
+          />
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-4 offset-10 btn-toolbar">
+          <button class="btn btn-primary"
+                  [disabled]="!f.valid">Save</button>
+          <button type="button" class="btn btn-outline-secondary cancel" (click)="onCancel()">Cancel</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

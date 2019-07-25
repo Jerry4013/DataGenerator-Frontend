@@ -1,0 +1,67 @@
+<div class="card">
+  <div class="card-header">
+    <h4>Journeys (3) </h4>
+  </div>
+  <div class="card-body">
+    <form (ngSubmit)="onSubmit(f)" #f="ngForm">
+      <div class="row">
+        <div class="col-6">
+          <div class="form-group">
+            <label for="periodAmount">Period Amount: </label>
+            <input
+              value="30"
+              type="number"
+              id="periodAmount"
+              class="form-control">
+          </div>
+        </div>
+        <div class="col-6">
+          <div class="form-group">
+            <label for="periodUnit">Period Unit: </label>
+            <select
+              type="text"
+              id="periodUnit"
+              class="form-control">
+              <option value="day">Days</option>
+              <option value="week">Weeks</option>
+              <option value="month">Months</option>
+            </select>
+          </div>
+        </div>
+      </div>
+      <button class="btn btn-primary" type="submit">Change Look Back Period</button>
+    </form>
+    <br>
+    <div class="container">
+      <div class="month">Jan</div>
+      <div class="month">Feb</div>
+      <div class="month">Mar</div>
+      <div class="month">Apr</div>
+      <div class="month">May</div>
+      <div class="month">Jun</div>
+      <div class="month">Jul</div>
+      <div class="month">Aug</div>
+      <div class="month">Sep</div>
+      <div class="month">Oct</div>
+      <div class="month">Nov</div>
+      <div class="month">Dec</div>
+    </div>
+    <div class="container">
+      <div class="journey-background-marketing"></div>
+      <div class="journey-background-marketing"></div>
+      <div class="journey-background-marketing"></div>
+      <div class="journey-background-marketing"></div>
+      <div class="journey-background-sales"></div>
+      <div class="journey-background-sales"></div>
+      <div class="journey-background-sales"></div>
+      <div class="journey-background-sales"></div>
+      <div class="journey-background-service"></div>
+      <div class="journey-background-service"></div>
+      <div class="journey-background-service"></div>
+      <div class="journey-background-service"></div>
+    </div>
+  </div>
+</div>
+<hr>
+<app-interaction (pageRefreshed)="onPageRefreshed($event)"></app-interaction>
+<app-paging [totalPages]="totalPages" [currentPage]="currentPage"></app-paging>

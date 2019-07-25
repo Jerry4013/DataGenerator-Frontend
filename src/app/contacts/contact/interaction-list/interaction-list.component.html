@@ -1,0 +1,25 @@
+<h4>Interactions ({{totalElements}})</h4>
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <table class="table">
+        <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Interaction Type</th>
+          <th scope="col">Communication Medium</th>
+          <th scope="col">Interaction Time</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let interaction of interactions; let i = index">
+          <th scope="row">{{ ( currentPage - 1 ) * 10 + i + 1 }}</th>
+          <td>{{ interaction.iaType }}</td>
+          <td>{{ interaction.commMedium }}</td>
+          <td>{{ interaction.timestamp | date }}</td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

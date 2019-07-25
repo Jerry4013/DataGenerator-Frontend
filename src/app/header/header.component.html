@@ -1,0 +1,27 @@
+<nav class="navbar navbar-expand navbar-light bg-light">
+  <a class="navbar-brand" routerLink="/">Data Lake</a>
+<!--  <button class="navbar-toggler"-->
+<!--          type="button"-->
+<!--          data-toggle="collapse"-->
+<!--          data-target="#navbarSupportedContent"-->
+<!--          aria-controls="navbarSupportedContent"-->
+<!--          aria-expanded="false"-->
+<!--          aria-label="Toggle navigation">-->
+<!--    <span class="navbar-toggler-icon"></span>-->
+<!--  </button>-->
+
+<!--  <div class="collapse navbar-collapse" accountId="navbarSupportedContent">-->
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item" routerLinkActive="active">
+        <a class="nav-link" routerLink="/accounts">Business Customers</a>
+      </li>
+      <li class="nav-item" routerLinkActive="active">
+        <a class="nav-link" routerLink="/individual">Individual Customers</a>
+      </li>
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+      <li><button class="btn btn-primary" (click)="onLogIn()">LogIn</button></li>
+      <li><button class="btn btn-success" (click)="onSignUp()">SignUp</button></li>
+    </ul>
+<!--  </div>-->
+</nav>

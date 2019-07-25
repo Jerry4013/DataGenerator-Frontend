@@ -1,0 +1,21 @@
+<div class="container account-detail">
+  <div class="row">
+    <div class="col-12">
+      <h4>{{ contact.title }}  {{ contact.lastName }}</h4>
+    </div>
+  </div>
+  <br>
+  <div class="row">
+    <div class="col-sm">
+      <p>First Name:  {{ contact.firstName }}</p>
+      <p>Full Name:  {{ contact.fullName }}</p>
+      <p>Department:  {{ contact.department }}</p>
+      <p>Date of Birth:  {{ contact.dateOfBirth | date }}</p>
+    </div>
+    <div class="col-sm">
+      <p>Last Name:  {{ contact.lastName }}</p>
+      <p>Gender:  {{ contact.sex == 1 ? 'Male' : 'Female' }}</p>
+      <p>Email:  {{ contact.email }}</p>
+    </div>
+  </div>
+</div>

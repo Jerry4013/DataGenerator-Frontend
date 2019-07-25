@@ -1,0 +1,29 @@
+.container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-auto-rows: auto auto auto auto auto auto auto auto auto auto auto auto;
+}
+
+.container>.month {
+  text-align: center;
+  background-color: lightgray;
+  margin: 1px;
+}
+
+.container>.journey-background-marketing {
+  background-color: lightgoldenrodyellow;
+  margin: 1px;
+  height: 50px;
+}
+
+.container>.journey-background-sales {
+  background-color: lightpink;
+  margin: 1px;
+  height: 50px;
+}
+
+.container>.journey-background-service {
+  background-color: lightblue;
+  margin: 1px;
+  height: 50px;
+}

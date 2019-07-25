@@ -1,0 +1,117 @@
+
+<button class="btn btn-success create" (click)="onCreateMode()" [disabled]="createMode">Create One Contact</button>
+
+<div class="row">
+  <div class="col-12">
+    <form *ngIf="createMode" (ngSubmit)="onSubmit(f)" #f="ngForm">
+      <div class="row">
+        <div class="col-2 form-group">
+          <label for="title">Title</label>
+          <select
+            name="title"
+            id="title"
+            class="form-control"
+            ngModel
+          >
+            <option *ngFor="let title of titles" [value]="title">{{ title }}</option>
+          </select>
+        </div>
+        <div class="col-3 form-group">
+          <label for="first-name">First Name*</label>
+          <input
+            type="text"
+            id="first-name"
+            class="form-control"
+            name="firstName"
+            ngModel
+            required
+          >
+        </div>
+        <div class="col-3 form-group">
+          <label for="last-name">Last Name*</label>
+          <input
+            type="text"
+            id="last-name"
+            class="form-control"
+            name="lastName"
+            ngModel
+            required>
+        </div>
+        <div class="col-4 form-group">
+          <label for="full-name">Full Name</label>
+          <input
+            type="text"
+            id="full-name"
+            class="form-control"
+            name="fullName"
+            ngModel>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-4 form-group">
+          <label for="email">Email</label>
+          <input
+            type="email"
+            id="email"
+            class="form-control"
+            name="email"
+            ngModel
+            email
+          >
+        </div>
+        <div class="col-2 form-group">
+          <label for="sex">Gender</label>
+          <select
+            name="sex"
+            id="sex"
+            ngModel
+            class="form-control"
+          >
+            <option value=0></option>
+            <option value=1>Male</option>
+            <option value=2>Female</option>
+          </select>
+        </div>
+        <div class="col-2 form-group">
+          <label for="marital-status">Marital Status</label>
+          <select
+            name="maritalStatus"
+            id="marital-status"
+            ngModel
+            class="form-control"
+          >
+            <option *ngFor="let status of maritalStatus; let i = index" [value]="i">{{ status }}</option>
+          </select>
+        </div>
+        <div class="col-4 form-group">
+          <label for="department">Department</label>
+          <input
+            type="text"
+            id="department"
+            class="form-control"
+            name="department"
+            ngModel/>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-3 form-group">
+          <label for="dateOfBirth">Date of Birth</label>
+          <input
+            type="date"
+            id="dateOfBirth"
+            class="form-control"
+            name="dateOfBirth"
+            ngModel/>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-4 offset-10 btn-toolbar">
+          <button class="btn btn-primary"
+                  [disabled]="!f.valid">Save</button>
+          <button type="button" class="btn btn-outline-secondary cancel" (click)="onCancel()">Cancel</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+

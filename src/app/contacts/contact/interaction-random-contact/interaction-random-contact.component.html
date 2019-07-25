@@ -1,0 +1,63 @@
+<button class="btn btn-success create" (click)="onRandomMode()" [disabled]="randomMode">Create Multiple Random Interactions</button>
+
+<div class="row">
+  <div class="col-12">
+    <form *ngIf="randomMode" (ngSubmit)="onsubmitRandom(fr)" #fr="ngForm">
+      <div class="col-4 form-group">
+        <label for="amount">Amount (Please input a number <= 9999)</label>
+        <input
+          type="number"
+          id="amount"
+          class="form-control"
+          name="amount"
+          ngModel
+          required
+          pattern="^[1-9][0-9]{0,3}$"
+          #amount
+        >
+      </div>
+      <div class="col-3 form-group">
+        <label for="d1">Start Date</label>
+        <input
+          type="date"
+          id="d1"
+          class="form-control"
+          name="d1"
+          ngModel
+          required
+        >
+      </div>
+      <div class="col-3 form-group">
+        <label for="d2">End Date</label>
+        <input
+          type="date"
+          id="d2"
+          class="form-control"
+          name="d2"
+          ngModel
+          required
+        >
+      </div>
+      <div class="col-2 form-group">
+        <label for="iaStage">Stage</label>
+        <select
+          name="iaStage"
+          id="iaStage"
+          ngModel
+          class="form-control"
+        >
+          <option value=1>Marketing</option>
+          <option value=2>Sales</option>
+          <option value=3>Service</option>
+        </select>
+      </div>
+      <div class="row">
+        <div class="col-4 offset-8 btn-toolbar">
+          <button type="submit" class="btn btn-primary"
+                  [disabled]="!fr.valid">Create {{amount.value}} Interactions</button>
+          <button type="button" class="btn btn-outline-secondary cancel" (click)="onCancel()">Cancel</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

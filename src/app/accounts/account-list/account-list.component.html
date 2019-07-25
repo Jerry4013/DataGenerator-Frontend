@@ -1,0 +1,9 @@
+<div class = "list-group">
+  <a
+    [routerLink]="['/accounts', account.accountId]"
+    class="list-group-item list-group-item-action"
+    *ngFor="let account of accounts"
+  >
+    {{ account.companyName }}
+  </a>
+</div>

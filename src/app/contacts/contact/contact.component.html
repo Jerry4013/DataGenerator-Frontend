@@ -1,0 +1,11 @@
+<button class="btn btn-light" (click)="onBack()">< Back to Current Account</button>
+<hr>
+<app-account-detail [accountDetail]="account"></app-account-detail>
+<hr>
+<app-contact-detail></app-contact-detail>
+<hr>
+<app-interaction-edit [contactId]="contactId"></app-interaction-edit>
+<app-interaction-random-contact [contactId]="contactId"></app-interaction-random-contact>
+<hr>
+<app-interaction-list [contactId]="contactId" (pageRefreshed)="onPageRefreshed($event)"></app-interaction-list>
+<app-paging [totalPages]="totalPages" [currentPage]="currentPage"></app-paging>
